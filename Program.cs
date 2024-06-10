@@ -20,6 +20,12 @@ namespace ConsoleApp___Arrays
 
                 numbers.Add(previousNumber + previousNumber2);
             }
+
+            foreach(var number in numbers)
+            {
+                Console.WriteLine(number);
+            }
+
             Console.ReadKey();
             
         }
