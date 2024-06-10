@@ -9,40 +9,19 @@ namespace ConsoleApp___Arrays
         static void Main(string[] args)
         {
             // arrays, lists, collection
-            var names = new List<string> { "major", "peter", "Collins", "joyce" };
+            var numbers = new List<int> {1, 1};
 
-            while (true)
+            while(numbers.Count <= 20)
             {
-                Console.WriteLine("Please enter the name: ");
-                string searchName = Console.ReadLine();
-                bool found = false;
+                var previousNumber = numbers[numbers.Count - 1];
+                var previousNumber2 = numbers[numbers.Count - 2];
+                int total = previousNumber + previousNumber2;
+                Console.WriteLine($"{previousNumber} and {previousNumber2} = {total}");
 
-                // Loop through the list to find the exact match
-                for (int i = 0; i < names.Count; i++)
-                {
-                    if (names[i].Equals(searchName, StringComparison.OrdinalIgnoreCase))
-                    {
-                        // Print the index if a match is found
-                        Console.WriteLine($"{searchName} is at index {i}");
-                        found = true; 
-                        break; 
-                    }
-                }
-
-                // If the name was found, exit the search loop
-                if (found)
-                {
-                    break;
-                }
-                else
-                {
-                    // Prompt the user to try again if the name wasn't found
-                    Console.WriteLine("Not Found!! Try again.");
-                }
+                numbers.Add(previousNumber + previousNumber2);
             }
-
-            // Wait for user input before closing the console
             Console.ReadKey();
+            
         }
     }
 }
